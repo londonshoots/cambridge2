@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CAMBRIDGE 360VIRTUAL TOUR</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="multiple-scenes ">
+
+<div id="pano"></div>
+
+<div id="sceneList">
+  <ul class="scenes">
+    
+      <a href="javascript:void(0)" class="scene" data-id="0-1entrance">
+        <li class="text">1.Entrance</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="1-2sitting-area">
+        <li class="text">2.Sitting Area</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="2-3sitting-areabalcony">
+        <li class="text">3.Sitting Area:Balcony</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="3-4sitting-areakitchen">
+        <li class="text">4.Sitting Area:Kitchen</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="4-5kitchen-island">
+        <li class="text">5.Kitchen Island</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="5-6kitchen-areabalcony">
+        <li class="text">6.Kitchen Area:Balcony</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="6-7kitchen-areacooker">
+        <li class="text">7.Kitchen Area:Cooker</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="7-8kitchen-areastore-room">
+        <li class="text">8.Kitchen Area:Store Room</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="8-9kitchen-areastore-roomtoilet">
+        <li class="text">9.Kitchen Area:Store Room:Toilet</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="9-10toilet">
+        <li class="text">10.Toilet</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="10-11dining-area">
+        <li class="text">11.Dining Area</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="11-12stairs-landing">
+        <li class="text">12.Stairs Landing</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="12-13upper-floor-landing">
+        <li class="text">13.Upper Floor Landing</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="13-14bedroom-1_entrance">
+        <li class="text">14.Bedroom 1_Entrance</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="14-15bedroom-1_middle">
+        <li class="text">15.Bedroom 1_Middle</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="15-16bedroom-1_back">
+        <li class="text">16.Bedroom 1_Back</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="16-17bedroom-1_ensuite">
+        <li class="text">17.Bedroom 1_Ensuite</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="17-18bedroom-1_shower">
+        <li class="text">18.Bedroom 1_Shower</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="18-19bedroom-2_entrance">
+        <li class="text">19.Bedroom 2_Entrance</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="19-20bedroom-2_middle">
+        <li class="text">20.Bedroom 2_Middle</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="20-21bedroom-2_ensuite">
+        <li class="text">21.Bedroom 2_Ensuite</li>
+      </a>
+    
+  </ul>
+</div>
+
+<div id="titleBar">
+  <h1 class="sceneName"></h1>
+</div>
+
+<a href="javascript:void(0)" id="autorotateToggle">
+  <img class="icon off" src="img/play.png">
+  <img class="icon on" src="img/pause.png">
+</a>
+
+<a href="javascript:void(0)" id="fullscreenToggle">
+  <img class="icon off" src="img/fullscreen.png">
+  <img class="icon on" src="img/windowed.png">
+</a>
+
+<a href="javascript:void(0)" id="sceneListToggle">
+  <img class="icon off" src="img/menu.svg">
+  <img class="icon on" src="img/close.png">
+</a>
+
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
+  <img class="icon" src="img/up.png">
+</a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
+  <img class="icon" src="img/down.png">
+</a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
+  <img class="icon" src="img/left.png">
+</a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
+  <img class="icon" src="img/right.png">
+</a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
+  <img class="icon" src="img/plus.png">
+</a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
+  <img class="icon" src="img/minus.png">
+</a>
+
+
+<div
+      style="
+        display: block;
+        position: absolute;
+        width: 25vw;
+        bottom: 0px;
+        right: 30px;
+        background-color: rgba(0, 0, 0, 0);
+        padding: 0px;
+      ">
+      <img
+        src="./img/LS3.png"
+        style="width: 5vw; float: left; margin-right: 0.4rem" />
+      
+      <p style="font-size: 0.8vw">
+        <a href="https://www.londonshoot.com/" target="_blank"
+          >Attributions for all panoramas:<br />copyright© LONDONSHOOT</a
+        >
+      </p>
+    </div>
+
+
+
+
+<script src="vendor/es5-shim.js"></script>
+<script src="vendor/eventShim.js"></script>
+<script src="vendor/classList.js"></script>
+<script src="vendor/requestAnimationFrame.js" ></script>
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+
+
+
+</body>
+</html>
